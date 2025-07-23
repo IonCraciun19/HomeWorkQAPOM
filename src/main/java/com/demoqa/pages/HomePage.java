@@ -17,4 +17,21 @@ public class HomePage extends BasePage {
         click(challengingDOM);
         return new ChallengingDOMPage(driver);
     }
+
+    @FindBy(css="a[href='/javascript_alerts']")
+    WebElement jsAlerts;
+
+    public JavaScriptAlertsPage selectJavaScriptAlerts(){
+        click(jsAlerts);
+        return new JavaScriptAlertsPage(driver);
+    }
+
+    @FindBy(css="a[href='/windows']")
+    WebElement windows;
+
+    public MultipleWindows selectMultipleWindows(){
+        click(windows);
+        return new MultipleWindows(driver);
+    }
+
 }
