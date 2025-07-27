@@ -1,5 +1,6 @@
 package com.demoqa.core;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,8 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BasePage {
 
@@ -47,12 +46,14 @@ public class BasePage {
     }
 
     public boolean shouldHaveText(WebElement element, String text, int time) {
-        return wait(time)
-                .until(ExpectedConditions.textToBePresentInElement(element,text));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+        boolean isTextPresent = wait
+                .until(ExpectedConditions.textToBePresentInElement(element, text));
+        Assertions.assertTrue(isTextPresent);
+        return isTextPresent;
     }
 
-    public void switchToNewWindow(int index){
-        List<String> tabs = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(index));
+    protected boolean isContainsTest(String userName, WebElement element) {
+        return element.getText().contains(userName);
     }
 }

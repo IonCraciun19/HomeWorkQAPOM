@@ -46,7 +46,7 @@ public class JavaScriptAlertsPage extends BasePage {
     WebElement result;
 
     public JavaScriptAlertsPage verifyResult(String text){
-        Assertions.assertTrue(shouldHaveText(result, text,10));
+        shouldHaveText(result, text,10);
         return this;
     }
 
@@ -66,7 +66,7 @@ public class JavaScriptAlertsPage extends BasePage {
     WebElement promptResult;
 
     public JavaScriptAlertsPage verifyMessage(String text){
-        Assertions.assertTrue(shouldHaveText(promptResult, text, 10));
+        shouldHaveText(promptResult, text, 10);
         return this;
     }
 

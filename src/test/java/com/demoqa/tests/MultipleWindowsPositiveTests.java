@@ -1,7 +1,6 @@
 package com.demoqa.tests;
 
 import com.demoqa.core.TestBase;
-import com.demoqa.pages.ChallengingDOMPage;
 import com.demoqa.pages.HomePage;
 import com.demoqa.pages.MultipleWindows;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,8 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class MultipleWindowsPositiveTests extends TestBase {
-
-    MultipleWindows multipleWindows;
 
     @BeforeEach
     public void precondition(){
@@ -26,9 +23,10 @@ public class MultipleWindowsPositiveTests extends TestBase {
 
     @Test
     public void switchToNevTabPositiveTest(){
-        multipleWindows.switchToNewTab(1)
-                .compareText("New Window");
-
+        new MultipleWindows(driver)
+                .selectClickLink()
+                .switchToNewTab(1)
+                .verifyTabTitle("New Window");
     }
 
 }

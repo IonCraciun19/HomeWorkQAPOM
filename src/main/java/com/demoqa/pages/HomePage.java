@@ -34,4 +34,20 @@ public class HomePage extends BasePage {
         return new MultipleWindows(driver);
     }
 
+    @FindBy(css="a[href='/nested_frames']")
+    WebElement nestedFrame;
+
+    public IframePage selectNestedFrame(){
+        click(nestedFrame);
+        return new IframePage(driver);
+    }
+
+    @FindBy(css="a[href='/dropdown']")
+    WebElement dropdown;
+
+    public DropDownPage selectDropdown(){
+        click(dropdown);
+        return new DropDownPage(driver);
+    }
+
 }
