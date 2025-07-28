@@ -9,19 +9,20 @@ import org.junit.jupiter.api.Test;
 
 public class JavaScriptAlertsPositiveTests extends TestBase {
 
+    HomePage homePage;
     JavaScriptAlertsPage jsAlertPage;
 
     @BeforeEach
     public void precondition(){
+        homePage = new HomePage(driver);
         jsAlertPage = new JavaScriptAlertsPage(driver);
-        new HomePage(driver).selectJavaScriptAlerts();
+        homePage.selectJavaScriptAlerts();
     }
 
     @Test
     @DisplayName("Click on -'JavaScriptAlerts'")
     public void clickOnJavaScriptAlertsPositiveTest(){
-        new JavaScriptAlertsPage(driver)
-                .checkH3JSText("JavaScript Alerts");
+        jsAlertPage.checkH3JSText("JavaScript Alerts");
     }
 
     @Test
@@ -48,6 +49,4 @@ public class JavaScriptAlertsPositiveTests extends TestBase {
         jsAlertPage.sendMessageToAlert("Hallo Friends!!!")
                 .verifyMessage("Hallo Friends!!!");
     }
-
-
 }

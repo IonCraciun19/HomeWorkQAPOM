@@ -15,7 +15,6 @@ public class ChallengingDOMPage extends BasePage {
     @FindBy(css="h3")
     WebElement h3;
 
-
     public void checkH3Text(String textToFind) {
         String actualText = h3.getText();
         Assertions.assertEquals(textToFind,actualText);

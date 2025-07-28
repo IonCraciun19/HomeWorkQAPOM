@@ -69,5 +69,4 @@ public class JavaScriptAlertsPage extends BasePage {
         shouldHaveText(promptResult, text, 10);
         return this;
     }
-
 }

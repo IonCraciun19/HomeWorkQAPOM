@@ -9,15 +9,19 @@ import org.junit.jupiter.api.Test;
 
 public class ChallengingDOMPositiveTests extends TestBase {
 
+    HomePage homePage;
+    ChallengingDOMPage challengingDOM;
+
     @BeforeEach
     public void precondition(){
-        new HomePage(driver).selectChallengingDOM();
+        homePage = new HomePage(driver);
+        challengingDOM = new ChallengingDOMPage(driver);
+        homePage.selectChallengingDOM();
     }
 
     @Test
     @DisplayName("Click on -'ChallengingDOM'")
     public void clickOnChallengingDOMPositiveTest(){
-        new ChallengingDOMPage(driver)
-                .checkH3Text("Challenging DOM");
+        challengingDOM.checkH3Text("Challenging DOM");
     }
 }

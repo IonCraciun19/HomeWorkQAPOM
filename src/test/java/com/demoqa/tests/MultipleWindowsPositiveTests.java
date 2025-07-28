@@ -9,24 +9,26 @@ import org.junit.jupiter.api.Test;
 
 public class MultipleWindowsPositiveTests extends TestBase {
 
+    HomePage homePage;
+    MultipleWindows multipleWindows;
+
     @BeforeEach
     public void precondition(){
+        homePage = new HomePage(driver);
+        multipleWindows = new MultipleWindows(driver);
         new HomePage(driver).selectMultipleWindows();
     }
 
     @Test
     @DisplayName("Click on -'MultipleWindows'")
     public void clickOnMultipleWindowsPositiveTest(){
-        new MultipleWindows(driver)
-                .checkH3Text("Opening a new window");
+        multipleWindows.checkH3Text("Opening a new window");
     }
 
     @Test
     public void switchToNevTabPositiveTest(){
-        new MultipleWindows(driver)
-                .selectClickLink()
+        multipleWindows.selectClickLink()
                 .switchToNewTab(1)
                 .verifyTabTitle("New Window");
     }
-
 }

@@ -4,6 +4,7 @@ import com.demoqa.core.TestBase;
 import com.demoqa.pages.HomePage;
 import com.demoqa.pages.IframePage;
 import com.demoqa.pages.MultipleWindows;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,36 +13,37 @@ public class FrameWindowsTests extends TestBase {
     IframePage iframe;
     HomePage homePage;
 
+    @BeforeEach
+    public void precondition(){
+        iframe = new IframePage(driver);
+        iframe.selectNestedFrames();
+    }
+
     @Test
     public void switchNestedFrameLeftPositiveTest(){
-        new IframePage(driver).selectNestedFrames()
-                .switchToTopFrame()
+        iframe.switchToTopFrame()
                 .switchToLeftFrame()
                 .verifyFrameLeftText("LEFT");
     }
 
     @Test
     public void switchNestedFrameMiddlePositiveTest(){
-        new IframePage(driver).selectNestedFrames()
-                .switchToTopFrame()
+        iframe.switchToTopFrame()
                 .switchToMiddleFrame()
                 .verifyFrameMiddleText("MIDDLE");
     }
 
     @Test
     public void switchNestedFrameRightPositiveTest(){
-        new IframePage(driver).selectNestedFrames()
-                .switchToTopFrame()
+        iframe.switchToTopFrame()
                 .switchToRightFrame()
                 .verifyRightText("RIGHT");
     }
 
     @Test
     public void switchNestedFrameBottomPositiveTest(){
-        new IframePage(driver).selectNestedFrames()
-                .switchToBottomFrame()
+        iframe.switchToBottomFrame()
                 .verifyBottomText("BOTTOM");
     }
-
 }
 

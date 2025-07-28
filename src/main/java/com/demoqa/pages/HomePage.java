@@ -49,5 +49,4 @@ public class HomePage extends BasePage {
         click(dropdown);
         return new DropDownPage(driver);
     }
-
 }
