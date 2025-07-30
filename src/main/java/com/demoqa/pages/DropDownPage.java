@@ -32,4 +32,5 @@ public class DropDownPage extends BasePage {
         Assertions.assertTrue(shouldHaveText(dropdownForm, firstOption,5));
         return this;
     }
+
 }
