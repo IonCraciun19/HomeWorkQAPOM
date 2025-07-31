@@ -14,7 +14,7 @@ public class HorizontalSliderPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(xpath="//body/div[2]/div[1]/div[1]/div[1]/input[1]")
+    @FindBy(xpath="//input")
     WebElement slider;
 
     public HorizontalSliderPage selectSlider() {
