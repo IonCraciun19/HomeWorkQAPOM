@@ -65,4 +65,12 @@ public class HomePage extends BasePage {
         click(horizontalSlider);
         return new HorizontalSliderPage(driver);
     }
+
+    @FindBy(css="a[href='/broken_images']")
+    WebElement brokenImages;
+
+    public BrokenImagesPage selectBrokenImage(){
+        click(brokenImages);
+        return new BrokenImagesPage(driver);
+    }
 }
