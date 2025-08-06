@@ -16,7 +16,7 @@ public class MultipleWindowsPositiveTests extends TestBase {
     public void precondition(){
         homePage = new HomePage(driver);
         multipleWindows = new MultipleWindows(driver);
-        new HomePage(driver).selectMultipleWindows();
+        homePage.selectMultipleWindows();
     }
 
     @Test
