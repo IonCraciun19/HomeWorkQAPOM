@@ -20,10 +20,9 @@ public class UploadFilePositiveTests extends TestBase {
 
     @Test
     public void uploadNewFile(){
-        uploadFile.clickOnChooseFileButton("C:/Tools/picture1.png")
-                .verifySuccessUploading("picture1.png")
-                ;
-
+              uploadFile.clickOnChooseFile()
+                      .clickOnChooseFileButton("C:/Tools/picture1.png")
+                      .verifySuccessUploading("picture1.png");
     }
 
 }

@@ -1,4 +1,4 @@
-package com.demoqa.core;
+package com.demoqa.utils;
 
 import ch.qos.logback.classic.Logger;
 import org.junit.jupiter.api.extension.*;

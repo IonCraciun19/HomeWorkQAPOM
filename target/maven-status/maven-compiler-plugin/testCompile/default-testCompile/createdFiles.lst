@@ -1,0 +1,10 @@
+com\demoqa\tests\DropdownListPositiveTests.class
+com\demoqa\tests\ChallengingDOMPositiveTests.class
+com\demoqa\tests\DragAndDropPositiveTests.class
+com\demoqa\core\TestBase.class
+com\demoqa\tests\BrokenImagesPositiveTests.class
+com\demoqa\tests\UploadFilePositiveTests.class
+com\demoqa\tests\JavaScriptAlertsPositiveTests.class
+com\demoqa\tests\MultipleWindowsPositiveTests.class
+com\demoqa\tests\HorizontalSliderTests.class
+com\demoqa\tests\FrameWindowsTests.class

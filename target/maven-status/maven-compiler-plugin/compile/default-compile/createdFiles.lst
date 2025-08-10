@@ -1,0 +1,13 @@
+com\demoqa\pages\UploadFilePage.class
+com\demoqa\pages\DropDownPage.class
+com\demoqa\core\BasePage.class
+com\demoqa\pages\MultipleWindows.class
+com\demoqa\pages\HorizontalSliderPage.class
+com\demoqa\pages\IframePage.class
+com\demoqa\pages\BrokenImagesPage.class
+com\demoqa\pages\HomePage.class
+org\example\Main.class
+com\demoqa\pages\JavaScriptAlertsPage.class
+com\demoqa\pages\DragAndDropPage.class
+com\demoqa\core\TestResultLogger.class
+com\demoqa\pages\ChallengingDOMPage.class

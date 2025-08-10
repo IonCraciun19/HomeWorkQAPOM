@@ -1,7 +1,9 @@
 package com.demoqa.core;
 
+import com.demoqa.utils.TestResultLogger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,25 +14,25 @@ import java.time.Duration;
 
 @ExtendWith(TestResultLogger.class)
 public class TestBase {
+    
+    protected ApplicationManager app = new ApplicationManager(System.getProperty("browser", "chrome"));
 
     protected WebDriver driver;
     Logger logger = LoggerFactory.getLogger(TestBase.class);
-    public boolean testPassed = true;
+    
 
     @BeforeEach
-    public void init(){
-        driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+    public void init(TestInfo info){
+        driver = app.startTest();
+        logger.info("Start test {}",info.getDisplayName());
     }
 
-    @BeforeEach
-    public void startTest(){}
 
     @AfterEach
-    public void stopTest(){
+    public void tearDown(){
+        app.stopTest();
         logger.info("Stop test");
         logger.info("=========================");
+
     }
 }
