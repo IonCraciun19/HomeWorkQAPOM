@@ -31,6 +31,14 @@ public class BasePage {
         softly = new SoftAssertions();
     }
 
+    public void pause(int millis){
+        try {
+            Thread.sleep(millis);
+        }catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void click(WebElement element){
         element.click();
     }
