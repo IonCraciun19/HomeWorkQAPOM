@@ -1,18 +1,18 @@
 package com.demoqa.core;
 
+import com.demoqa.utils.MyTestWatcher;
 import com.demoqa.utils.TestResultLogger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Duration;
 
-@ExtendWith(TestResultLogger.class)
+
+@ExtendWith(MyTestWatcher.class)
 public class TestBase {
     
     protected ApplicationManager app = new ApplicationManager(System.getProperty("browser", "chrome"));
