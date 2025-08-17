@@ -7,6 +7,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,7 +19,7 @@ import java.time.Duration;
 
 public class BasePage {
 
-    protected WebDriver driver;
+    public static WebDriver driver;
     public static Actions actions;
     public static JavascriptExecutor js;
     public static  SoftAssertions softly;
@@ -93,4 +94,5 @@ public class BasePage {
         }
         softly.assertAll();
     }
+    
 }

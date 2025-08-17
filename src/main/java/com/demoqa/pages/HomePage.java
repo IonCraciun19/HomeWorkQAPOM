@@ -1,11 +1,18 @@
 package com.demoqa.pages;
 
+import com.demoqa.core.ApplicationManager;
 import com.demoqa.core.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
+import java.time.Duration;
+
 public class HomePage extends BasePage {
+
+    ApplicationManager applicationManager = new ApplicationManager("chrome");
+
 
     public HomePage(WebDriver driver){
         super(driver);
@@ -80,5 +87,17 @@ public class HomePage extends BasePage {
     public UploadFilePage selectUploadFile() {
         click(upload);
         return new UploadFilePage(driver);
+    }
+
+    public void open(){
+        driver.get("https://the-internet.herokuapp.com/");
+    }
+
+    @FindBy(css="a[href='/login']")
+    WebElement login;
+
+    public FormAuthenticationPage clickOnAuthenticationLink() {
+        click(login);
+        return new FormAuthenticationPage(driver);
     }
 }
